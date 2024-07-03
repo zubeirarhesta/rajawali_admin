@@ -21,3 +21,5 @@ export async function DELETE(request) {
   await Topic.findByIdAndDelete(id);
   return NextResponse.json({ message: "Topic deleted" }, { status: 200 });
 }
+
+export const dynamic = "force-dynamic";
