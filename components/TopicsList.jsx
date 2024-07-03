@@ -3,8 +3,13 @@ import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
+  const url =
+    "development" === process.env.NEXT_PUBLIC_ENV
+      ? "http://localhost:3000/api/topics"
+      : "https://rajawali-admin.vercel.app/api/products";
+
   try {
-    const res = await fetch(process.env.NEXT_PUBLIC_URL + "/api/topics", {
+    const res = await fetch(url, {
       cache: "no-store",
     });
 
